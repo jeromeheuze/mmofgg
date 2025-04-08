@@ -9,29 +9,32 @@
 
     <!-- POST PREVIEW SHOWCASE -->
     <div class="post-preview-showcase grid-1col centered gutter-small">
-        <!-- POST PREVIEW -->
+        <?php
+        $query_post4x = "SELECT * FROM content WHERE active='1' ORDER BY total_visits DESC LIMIT 4";
+        mysqli_set_charset($DBcon,"utf8");
+        $result_post4x = $DBcon->query($query_post4x);
+        while ($row = $result_post4x->fetch_assoc()) {
+        ?>
         <div class="post-preview tiny gaming-news">
-            <!-- POST PREVIEW IMG WRAP -->
-            <a href="post-v1.html">
+            <a href="<?=$row["post_preview_url"]?>">
                 <div class="post-preview-img-wrap">
-                    <!-- POST PREVIEW IMG -->
                     <figure class="post-preview-img liquid">
-                        <img src="/img/posts/01.jpg" alt="post-01">
+                        <img src="<?=$row["post_preview_icon"]?>" alt="<?=$row["post_preview_title"]?>">
                     </figure>
-                    <!-- /POST PREVIEW IMG -->
                 </div>
             </a>
-            <!-- /POST PREVIEW IMG WRAP -->
-
-            <!-- POST PREVIEW TITLE -->
-            <a href="post-v1.html" class="post-preview-title">The Clash of Dragons is breaking record sales in USA and Japan</a>
-            <!-- POST AUTHOR INFO -->
+            <a href="<?=$row["post_preview_url"]?>" class="post-preview-title"><?=$row["post_preview_title"]?></a>
             <div class="post-author-info-wrap">
-                <p class="post-author-info small light">By <a href="search-results.html" class="post-author">Dexter</a><span class="separator">|</span>Dec 15th, 2018</p>
+                <p class="post-author-info small light">
+                    By <span class="post-author"><?=$row["post_author"]?></span>
+                    <span class="separator">|</span><?=$row["created"]?>
+                </p>
             </div>
-            <!-- /POST AUTHOR INFO -->
         </div>
-        <!-- /POST PREVIEW -->
+        <?php
+        }
+        $result_post4x->free_result();
+        ?>
     </div>
     <!-- /POST PREVIEW SHOWCASE -->
 </div>

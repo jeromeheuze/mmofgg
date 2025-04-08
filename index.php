@@ -1,6 +1,11 @@
 <?php
 include "./includes/global.php";
 require_once './bin/dbconnect.php';
+
+$query_item = "SELECT * FROM content WHERE active='1' ORDER BY created DESC LIMIT 10";
+mysqli_set_charset($DBcon,"utf8");
+$result_all = $DBcon->query($query_item);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +32,122 @@ require_once './bin/dbconnect.php';
 <?php include "./includes/navigation-wrap.php" ?>
 <?php include "./includes/mobile-menu-pull.php" ?>
 <?php //include "./modules/live-news-widget.php" ?>
+
+<div class="banner-wrap e-sport">
+    <!-- BANNER -->
+    <div class="banner grid-limit">
+        <h1 class="banner-title">MMO Fishing Games</h1>
+        <p class="banner-sections">
+            <span class="banner-section">Home</span>
+            <!-- ARROW ICON -->
+            <svg class="arrow-icon">
+                <use xlink:href="#svg-arrow"></use>
+            </svg>
+            <!-- /ARROW ICON -->
+            <span class="banner-section">Hub for finding fishing video games</span>
+        </p>
+    </div>
+    <!-- /BANNER -->
+</div>
+
+<!-- LAYOUT CONTENT 1 -->
+<div class="layout-content-1 layout-item-3-1 grid-limit">
+    <!-- LAYOUT BODY -->
+    <div class="layout-body">
+        <!-- LAYOUT ITEM -->
+        <div class="layout-item gutter-big">
+            <div class="layout-item">
+
+                <?php
+                if ($result_all != null) {
+                    while ($row = $result_all->fetch_assoc()) {
+                        $class_color = "";
+                        if ($row["type"] === "guides") {
+                            $class_color = " movie-news";
+                        } else if ($row["type"] === "reviews") {
+                            $class_color = " game-review";
+                        } else {
+                            $class_color = " gaming-news";
+                        }
+                        ?>
+                        <div class="post-preview landscape big<?=$class_color;?>">
+                            <a href="<?=$row["post_preview_url"]?>">
+                                <div class="post-preview-img-wrap">
+                                    <figure class="post-preview-img liquid">
+                                        <img src="<?=$row["post_preview_img"]?>" alt="<?=$row["post_preview_title"]?>">
+                                    </figure>
+                                </div>
+                            </a>
+                            <?php if ($row["type"] === "guides") { ?>
+                                <a href="/guides/" class="tag-ornament">Game Guide</a>
+                            <?php } else if ($row["type"] === "reviews") { ?>
+                                <a href="/reviews/" class="tag-ornament">Game Review</a>
+                            <?php } ?>
+                            <a href="<?=$row["post_preview_url"]?>" class="post-preview-title"><?=$row["post_preview_title"]?></a>
+                            <div class="post-author-info-wrap">
+                                <figure class="user-avatar tiny liquid">
+                                    <img src="<?=$row["user_avatar"]?>" alt="user-admin">
+                                </figure>
+                                <p class="post-author-info small light">By <span class="post-author"><?=$row["post_author"]?></span><span class="separator">|</span><?=$row["created"]?></p>
+                            </div>
+                            <p class="post-preview-text"><?=$row["post_preview_text"]?></p>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    ?>
+                    <div class="post-preview landscape big gaming-news">No Tags</div>
+                <?php } ?>
+
+            </div>
+
+        </div>
+        <!-- /LAYOUT ITEM -->
+
+        <?php /** ?>
+        <!-- PAGE NAVIGATION -->
+        <div class="page-navigation blue spaced" style="display: none">
+        <!-- CONTROL PREVIOUS -->
+        <div class="slider-control big control-previous">
+        <!-- ARROW ICON -->
+        <svg class="arrow-icon medium">
+        <use xlink:href="#svg-arrow-medium"></use>
+        </svg>
+        <!-- /ARROW ICON -->
+        </div>
+        <!-- /CONTROL PREVIOUS -->
+        <a href="#" class="page-navigation-item">1</a>
+        <a href="#" class="page-navigation-item active">2</a>
+        <a href="#" class="page-navigation-item">3</a>
+        <a href="#" class="page-navigation-item">...</a>
+        <a href="#" class="page-navigation-item">8</a>
+        <!-- CONTROL PREVIOUS -->
+        <div class="slider-control big control-next">
+        <!-- ARROW ICON -->
+        <svg class="arrow-icon medium">
+        <use xlink:href="#svg-arrow-medium"></use>
+        </svg>
+        <!-- /ARROW ICON -->
+        </div>
+        <!-- /CONTROL PREVIOUS -->
+        </div>
+        <!-- /PAGE NAVIGATION -->
+        <?php **/ ?>
+    </div>
+    <!-- /LAYOUT BODY -->
+
+    <!-- LAYOUT SIDEBAR -->
+    <div class="layout-sidebar layout-item gutter-medium">
+
+        <?php include "./modules/sidebar-popular-posts-4x.php" ?>
+        <?php include "./modules/sidebar-latest-reviews-4x.php" ?>
+        <?php include "./modules/sidebar-banner-ad-250x250.php" ?>
+        <?php include "./modules/sidebar-tags.php" ?>
+
+    </div>
+    <!-- /LAYOUT SIDEBAR -->
+</div>
+<!-- /LAYOUT CONTENT 1 -->
 
 <?php include "./includes/footer-top-wrap.php" ?>
 <?php include "./includes/footer-bottom-wrap.php" ?>

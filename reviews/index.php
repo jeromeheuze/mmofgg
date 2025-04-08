@@ -1,6 +1,11 @@
 <?php
 include "./../includes/global.php";
 require_once './../bin/dbconnect.php';
+
+$query_item = "SELECT * FROM content WHERE active='1' AND type='reviews' LIMIT 10";
+mysqli_set_charset($DBcon,"utf8");
+$result_all = $DBcon->query($query_item);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,50 +58,34 @@ require_once './../bin/dbconnect.php';
     <div class="layout-body">
         <!-- LAYOUT ITEM -->
         <div class="layout-item gutter-big">
-            <!-- POST PREVIEW -->
+            <?php
+            while ($row = $result_all->fetch_assoc()) {
+            ?>
             <div class="post-preview large game-review">
-                <!-- POST PREVIEW IMG WRAP -->
-                <a href="/reviews/albion-online-review.php">
+                <a href="<?=$row["post_preview_url"]?>">
                     <div class="post-preview-img-wrap">
-                        <!-- POST PREVIEW IMG -->
                         <figure class="post-preview-img liquid">
-                            <img src="/img/games/albion-online-fishing.jpeg" alt="post-16">
+                            <img src="<?=$row["post_preview_img"]?>" alt="<?=$row["post_preview_title"]?>">
                         </figure>
-                        <!-- POST PREVIEW IMG -->
-
-                        <!-- REVIEW RATING -->
-                        <div class="review-rating">
-                            <div id="content-news-rate-9" class="arc"></div>
-                        </div>
-                        <!-- /REVIEW RATING -->
                     </div>
                 </a>
-                <!-- /POST PREVIEW IMG WRAP -->
-
-                <!-- TAG ORNAMENT -->
                 <a href="/reviews/" class="tag-ornament">Game Reviews</a>
-                <!-- /TAG ORNAMENT -->
-
-                <!-- POST PREVIEW TITLE -->
-                <a href="/reviews/albion-online-review.php" class="post-preview-title">Albion Online - Fishing review 2025</a>
-                <!-- POST AUTHOR INFO -->
+                <a href="<?=$row["post_preview_url"]?>" class="post-preview-title"><?=$row["post_preview_title"]?></a>
                 <div class="post-author-info-wrap">
-                    <!-- USER AVATAR -->
                         <figure class="user-avatar tiny liquid">
-                            <img src="/img/users/admin-profile.jpg" alt="user-admin">
+                            <img src="<?=$row["user_avatar"]?>" alt="user-admin">
                         </figure>
-                    <!-- /USER AVATAR -->
-                    <p class="post-author-info small light">By <span class="post-author">Spectrum3900</span><span class="separator">|</span>January 11, 2025</p>
+                    <p class="post-author-info small light">By <span class="post-author"><?=$row["post_author"]?></span><span class="separator">|</span><?=$row["created"]?></p>
                 </div>
-                <!-- /POST AUTHOR INFO -->
-                <!-- POST PREVIEW TEXT -->
-                <p class="post-preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p class="post-preview-text"><?=$row["post_preview_text"]?></p>
             </div>
-            <!-- /POST PREVIEW -->
-
+            <?php
+            }
+            ?>
         </div>
         <!-- /LAYOUT ITEM -->
 
+        <?php /** ?>
         <!-- PAGE NAVIGATION -->
         <div class="page-navigation blue spaced" style="display: none">
             <!-- CONTROL PREVIOUS -->
@@ -124,6 +113,7 @@ require_once './../bin/dbconnect.php';
             <!-- /CONTROL PREVIOUS -->
         </div>
         <!-- /PAGE NAVIGATION -->
+        <?php **/ ?>
     </div>
     <!-- /LAYOUT BODY -->
 

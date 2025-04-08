@@ -4,6 +4,11 @@
 //error_reporting( ~E_DEPRECATED & ~E_NOTICE );
 // but I strongly suggest you to use PDO or MySQLi.
 
+define("DBHOST", "localhost");
+define("DBUSER", "spectrum_mmo_u");
+define("DBPASS", "q(Aw4(8O?CIu");
+define("DBNAME", "spectrum_mmofishing");
+
 $DBhost = "localhost";
 //prod
 $DBuser = "spectrum_mmo_u";

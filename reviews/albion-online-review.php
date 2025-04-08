@@ -1,6 +1,12 @@
 <?php
 include "./../includes/global.php";
 require_once './../bin/dbconnect.php';
+include "./../bin/class/Pages.php";
+
+$Pages = new Pages(DBHOST, DBUSER, DBPASS, DBNAME);
+$slug = "/reviews/albion-online-review.php";
+$Pages->incrementTotalVisitsFromSlug($slug);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +15,7 @@ require_once './../bin/dbconnect.php';
     <?php
     $title = "Albion Online - Fishing review 2025 | Reviews | MMO Fishing Games";
     $description = "MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.";
-    $url = "https://mmofishing.games/reviews/albion-online-review.php";
+    $url = "https://mmofishing.games".$slug;
     ?>
     <title><?=$title?></title>
     <meta name="description" content="<?=$description?>">
@@ -32,57 +38,24 @@ require_once './../bin/dbconnect.php';
     <!-- POST OPEN -->
     <div class="post-open game-review">
         <!-- POST OPEN HEADER WRAP -->
-        <div class="post-open-header-wrap" style="background-image: url('/img/games/albion-online-fishing.jpeg');">
+        <div class="post-open-header-wrap" style="background-image: url('/img/games/albion-online-fishing.jpg');">
             <!-- POST OPEN HEADER -->
             <div class="post-open-header grid-limit">
-                <!-- REVIEW RATING -->
-                <div class="review-rating">
-                    <div id="banner-top-8_7" class="arc medium"></div>
-                </div>
-                <!-- /REVIEW RATING -->
-
-                <!-- TAG ORNAMENT -->
                 <a href="/reviews/" class="tag-ornament">Game reviews</a>
-                <!-- /TAG ORNAMENT -->
-
-                <!-- POST OPEN TITLE -->
                 <p class="post-open-title big negative">Albion Online - Fishing review 2025</p>
-                <!-- /POST OPEN TITLE -->
-
-                <!-- POST AUTHOR INFO -->
                 <div class="post-author-info-wrap negative">
-                    <!-- USER AVATAR -->
                         <figure class="user-avatar tiny liquid">
                             <img src="/img/users/admin-profile.jpg" alt="user-admin">
                         </figure>
-                    <!-- /USER AVATAR -->
                     <p class="post-author-info small light">By <span class="post-author">Spectrum3900</span><span class="separator">|</span>January 11, 2025</p>
                 </div>
-                <!-- /POST AUTHOR INFO -->
-
-                <!-- SOCIAL LINKS -->
                 <div class="social-links centered">
-                    <!-- BUBBLE ORNAMENT -->
-                    <a target="_blank" href="https://www.facebook.com/sharer.php?u=<?=$url?>" class="bubble-ornament fb">
-                        <!-- FACEBOOK ICON -->
-                        <svg class="facebook-icon">
-                            <use xlink:href="#svg-facebook"></use>
-                        </svg>
-                        <!-- /FACEBOOK ICON -->
-                    </a>
-                    <!-- /BUBBLE ORNAMENT -->
-
-                    <!-- BUBBLE ORNAMENT -->
                     <a target="_blank" href="https://twitter.com/intent/tweet?url=<?=$url?>&text=<?=urlencode($title)?>&via=E2Prod&hashtags=mmofishing" class="bubble-ornament twt">
-                        <!-- TWITTER ICON -->
                         <svg class="twitter-icon">
                             <use xlink:href="#svg-twitter"></use>
                         </svg>
-                        <!-- /TWITTER ICON -->
                     </a>
-                    <!-- /BUBBLE ORNAMENT -->
                 </div>
-                <!-- /SOCIAL LINKS -->
             </div>
             <!-- /POST OPEN HEADER -->
         </div>
@@ -98,155 +71,47 @@ require_once './../bin/dbconnect.php';
 
                 <p class="post-open-text">Albion Online is a sandbox MMORPG set in the medieval fantasy world of Albion. Whether playing a hardened fighter, a farmer, a merchant, or a master craftsman, in the player-driven gameworld nearly every weapon and building is created by players. Thanks to a "you are what you wear" system free from typical class restrictions, a skilled archer can instantly become a powerful mage, allowing players to define their own roles within the game. I have played AO on PC for my review about mastering fishing.</p>
                 <p class="post-open-text">The fishing mechanics are quite interesting and quite an enjoyable experience fishing in the game.</p>
-                <p class="post-open-text">Thesis: Share your overall impression or theme (e.g., “A relaxing fishing experience amidst an action-packed RPG”).</p>
 
 
                 <!-- POST OPEN SUBTITLE -->
                 <h2 class="post-open-subtitle small">Gaming Graphics</h2>
                 <!-- /POST OPEN SUBTITLE -->
 
-                <p class="post-open-text">Environment Design: Describe the visuals of fishing spots (e.g., lakes, rivers, oceans).</p>
-                <p class="post-open-text">Fishing Animations: Evaluate character movements, fishing rod mechanics, and reeling actions.</p>
-                <p class="post-open-text">UI and Feedback: Assess how intuitive and visually appealing the fishing interface is (e.g., gauges, meters, or prompts).</p>
+                <p class="post-open-text">In Albion Online, fishing can be done in various bodies of water—rivers, lakes, and oceans are scattered throughout the world. However, it’s not always peaceful; you'll need to stay alert, as both hostile creatures and other players may cross your path. Sometimes, clearing out nearby threats is necessary before you can safely cast your line.</p>
+                <p class="post-open-text">The fishing animations feel smooth and satisfying, and the reeling mechanic is well-designed, adding a nice layer of engagement to the activity.</p>
+                <p class="post-open-text">When you cast your line, a clean and intuitive UI displays the casting distance, helping you aim your throw. Once the bobber starts moving, you’ll receive clear visual feedback, signaling the perfect moment to start reeling in your catch.</p>
 
                 <!-- POST OPEN SUBTITLE -->
                 <h2 class="post-open-subtitle small">Fishing Mechanics</h2>
                 <!-- /POST OPEN SUBTITLE -->
 
-                <p class="post-open-text">Fishing Controls: Explain how fishing is executed (e.g., button timing, motion controls, skill-based actions).</p>
-                <p class="post-open-text">Challenge and Skill Curve: Evaluate the balance between accessibility for beginners and challenge for advanced players.</p>
-                <p class="post-open-text">Variety of Fish: Discuss the range of fish types, their rarity, and how interesting the collection process is.</p>
-                <p class="post-open-text">Customization: Mention any options to upgrade gear, rods, bait, or clothing that affects fishing.</p>
+                <p class="post-open-text">Fishing in Albion Online is a simple yet skill-based activity. To start, you cast your line using a single button press. Once the bobber hits the water, you wait for it to twitch—this is your cue. Timing is key: as soon as you see movement, you need to click again to hook the fish. From there, a reeling mini-game begins, where you must keep a marker within a target zone by carefully managing your clicks. It’s a mix of timing and precision that adds depth to the otherwise peaceful activity.</p>
+                <p class="post-open-text">Fishing in Albion Online strikes a solid balance between being accessible to newcomers and offering a satisfying challenge for seasoned players. Beginners can quickly grasp the basics—casting, hooking, and reeling—thanks to the intuitive controls and clear visual cues. However, as players aim to catch rarer fish or fish in more dangerous zones, the timing and precision required in the reeling mini-game become more demanding. The added risk of hostile players and creatures also introduces an extra layer of strategy and awareness, keeping even veteran fishers on their toes.</p>
+                <p class="post-open-text">Albion Online offers a diverse selection of fish species, each tied to specific biomes and water types—rivers, lakes, and oceans all have their own unique catches. Fish come in varying rarities, from common types used in basic cooking to rare, valuable ones that are sought after for crafting or selling. The collection process is engaging, encouraging exploration across different zones to complete your fishing journal. The thrill of discovering new species and landing a rare catch adds a rewarding sense of progression to the activity.</p>
+                <p class="post-open-text">Fishing in Albion Online offers meaningful customization through gear upgrades. Players can craft and equip higher-tier fishing rods, which improve efficiency and allow access to better fishing spots. While there’s no traditional bait system, your fishing mastery and gear quality directly impact your success rate and the types of fish you can catch. Additionally, fishing-focused equipment—like gathering gear sets—provides bonuses such as increased yield or reduced resource loss, making your fishing trips more productive and rewarding.</p>
 
-                <!-- POST OPEN SUBTITLE -->
-                <h2 class="post-open-subtitle small">Fishing Immersion</h2>
-                <!-- /POST OPEN SUBTITLE -->
-
-                <p class="post-open-text">Audio Design: Describe the sound effects (e.g., water splashes, rod tension) and background music during fishing.</p>
-                <p class="post-open-text">Realism vs. Fantasy: Evaluate whether the game leans toward realistic fishing or an exaggerated, arcade-like style.</p>
-                <p class="post-open-text">Dynamic Elements: Discuss if factors like weather, time of day, or location affect fishing.</p>
-
-                <!-- POST OPEN SUBTITLE -->
-                <h2 class="post-open-subtitle small">Fishing Progression</h2>
-                <!-- /POST OPEN SUBTITLE -->
-
-                <p class="post-open-text">Incentives: Explore what players gain from fishing (e.g., in-game currency, crafting materials, achievements).</p>
-                <p class="post-open-text">Progression System: Mention any leveling, skill upgrades, or unlockable features tied to fishing.</p>
-                <p class="post-open-text">Integration into the Game: Explain how fishing contributes to the game’s overall experience (e.g., side activity vs. core mechanic).</p>
-
-                <!-- POST OPEN SUBTITLE -->
-                <p class="post-open-subtitle small">Pros and Cons</p>
-                <!-- /POST OPEN SUBTITLE -->
-
-                <p class="post-open-text">Summarize the strengths and weaknesses of the fishing experience.</p>
-                <p class="post-open-text">Provide a balanced perspective, highlighting areas for improvement.</p>
-
-
-
-
-                <!-- REVIEW BLOCK -->
-                <div class="review-block">
-                    <!-- REVIEW BLOCK ITEM -->
-                    <div class="review-block-item">
-                        <!-- PROGRESS BAR -->
-                        <div id="rv-gg-7_5" class="progress-bar">
-                            <!-- BAR PROGRESS WRAP -->
-                            <div class="bar-progress-wrap bubble tiny static">
-                                <p class="bar-progress-text"></p>
-                            </div>
-                            <!-- /BAR PROGRESS WRAP -->
-                        </div>
-                        <!-- /PROGRESS BAR -->
-
-                        <!-- PROGRESS BAR -->
-                        <div id="rv-fm-9_2" class="progress-bar">
-                            <!-- BAR PROGRESS WRAP -->
-                            <div class="bar-progress-wrap bubble tiny static">
-                                <p class="bar-progress-text"></p>
-                            </div>
-                            <!-- /BAR PROGRESS WRAP -->
-                        </div>
-                        <!-- /PROGRESS BAR -->
-
-                        <!-- PROGRESS BAR -->
-                        <div id="rv-fi-6_9" class="progress-bar">
-                            <!-- BAR PROGRESS WRAP -->
-                            <div class="bar-progress-wrap bubble tiny static">
-                                <p class="bar-progress-text"></p>
-                            </div>
-                            <!-- /BAR PROGRESS WRAP -->
-                        </div>
-                        <!-- /PROGRESS BAR -->
-
-                        <!-- PROGRESS BAR -->
-                        <div id="rv-fp-8_9" class="progress-bar">
-                            <!-- BAR PROGRESS WRAP -->
-                            <div class="bar-progress-wrap bubble tiny static">
-                                <p class="bar-progress-text"></p>
-                            </div>
-                            <!-- /BAR PROGRESS WRAP -->
-                        </div>
-                        <!-- /PROGRESS BAR -->
-                    </div>
-                    <!-- /REVIEW BLOCK ITEM -->
-
-                    <!-- REVIEW BLOCK ITEM -->
-                    <div class="review-block-item">
-                        <!-- ARC -->
-                        <div id="review-arc-8_7" class="arc big negative"></div>
-                        <!-- /ARC -->
-                    </div>
-                    <!-- /REVIEW BLOCK ITEM -->
-                </div>
-                <!-- /REVIEW BLOCK -->
 
                 <!-- FEATURE LIST -->
                 <div class="feature-list">
-                    <!-- FEATURE LIST BLOCK -->
                     <div class="feature-list-block">
-                        <!-- FEATURE LIST ITEM -->
                         <p class="feature-list-item"><span class="feature-title">Game:</span><span class="feature-info">Albion Online</span></p>
-                        <!-- /FEATURE LIST ITEM -->
-
-                        <!-- FEATURE LIST ITEM -->
                         <p class="feature-list-item"><span class="feature-title">Developer:</span><span class="feature-info">Sandbox Interactive</span></p>
-                        <!-- /FEATURE LIST ITEM -->
-
-                        <!-- FEATURE LIST ITEM -->
                         <p class="feature-list-item"><span class="feature-title">Release Date:</span><span class="feature-info">July 17, 2017</span></p>
-                        <!-- /FEATURE LIST ITEM -->
                     </div>
-                    <!-- /FEATURE LIST BLOCK -->
-
-                    <!-- FEATURE LIST BLOCK -->
                     <div class="feature-list-block">
-                        <!-- FEATURE LIST ITEM -->
                         <p class="feature-list-item"><span class="feature-title">Publisher:</span><span class="feature-info">Steam and Self</span></p>
-                        <!-- /FEATURE LIST ITEM -->
-
-                        <!-- FEATURE LIST ITEM -->
                         <p class="feature-list-item"><span class="feature-title">Reviewed on:</span><span class="feature-info">PC</span></p>
-                        <!-- /FEATURE LIST ITEM -->
-
-                        <!-- FEATURE LIST ITEM -->
                         <p class="feature-list-item"><span class="feature-title">PRICE:</span><span class="feature-info">USD 0.00 & IAP</span></p>
-                        <!-- /FEATURE LIST ITEM -->
                     </div>
-                    <!-- /FEATURE LIST BLOCK -->
                 </div>
                 <!-- /FEATURE LIST -->
 
-                <!-- POST OPEN TAGS -->
                 <div class="post-open-tags">
-                    <!-- TAG LIST -->
                     <div class="tag-list">
-                        <!-- TAG ITEM -->
-                        <a href="/" class="tag-item">Albion Online</a>
-                        <!-- /TAG ITEM -->
+                        <a href="/tags/albion-online/" class="tag-item">Albion Online</a>
                     </div>
-                    <!-- /TAG LIST -->
                 </div>
-                <!-- /POST OPEN TAGS -->
+
             </div>
             <!-- /POST OPEN BODY -->
         </div>
@@ -254,6 +119,7 @@ require_once './../bin/dbconnect.php';
     </div>
     <!-- /POST OPEN -->
 
+    <?php /** ?>
     <!-- GRID3 1COL -->
     <div class="grid3-1col centered gutter-big grid-limit">
         <!-- WIDGET NEWS -->
@@ -412,6 +278,7 @@ require_once './../bin/dbconnect.php';
 
     </div>
     <!-- /GRID3 1COL -->
+    <?php **/ ?>
 </div>
 <!-- /LAYOUT ITEM -->
 

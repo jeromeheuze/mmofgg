@@ -62,46 +62,31 @@ $result_all = $DBcon->query($query_item);
             <?php
             while ($row = $result_all->fetch_assoc()) {
             ?>
-            <!-- POST PREVIEW -->
             <div class="post-preview large movie-news">
-                <!-- POST PREVIEW IMG WRAP -->
-                <a href="<?=$row["post-preview-url"]?>">
+                <a href="<?=$row["post_preview_url"]?>">
                     <div class="post-preview-img-wrap">
-                        <!-- POST PREVIEW IMG -->
                         <figure class="post-preview-img liquid">
-                            <img src="<?=$row["post-preview-img"]?>" alt="post-13">
+                            <img src="<?=$row["post_preview_img"]?>" alt="<?=$row["post_preview_title"]?>">
                         </figure>
-                        <!-- POST PREVIEW IMG -->
                     </div>
                 </a>
-                <!-- /POST PREVIEW IMG WRAP -->
-
-                <!-- TAG ORNAMENT -->
                 <a href="/guides/" class="tag-ornament">Game Guide</a>
-                <!-- /TAG ORNAMENT -->
-
-                <!-- POST PREVIEW TITLE -->
-                <a href="<?=$row["post-preview-url"]?>" class="post-preview-title"><?=$row["post-preview-title"]?></a>
-                <!-- POST AUTHOR INFO -->
+                <a href="<?=$row["post_preview_url"]?>" class="post-preview-title"><?=$row["post_preview_title"]?></a>
                 <div class="post-author-info-wrap">
-                    <!-- USER AVATAR -->
                         <figure class="user-avatar tiny liquid">
-                            <img src="<?=$row["user-avatar"]?>" alt="user-admin">
+                            <img src="<?=$row["user_avatar"]?>" alt="user-admin">
                         </figure>
-                    <!-- /USER AVATAR -->
-                    <p class="post-author-info small light">By <span class="post-author"><?=$row["post-author"]?></span><span class="separator">|</span><?=$row["created"]?></p>
+                    <p class="post-author-info small light">By <span class="post-author"><?=$row["post_author"]?></span><span class="separator">|</span><?=$row["created"]?></p>
                 </div>
-                <!-- /POST AUTHOR INFO -->
-                <!-- POST PREVIEW TEXT -->
-                <p class="post-preview-text"><?=$row["post-preview-text"]?></p>
+                <p class="post-preview-text"><?=$row["post_preview_text"]?></p>
             </div>
-            <!-- /POST PREVIEW -->
             <?php
             }
             ?>
         </div>
         <!-- /LAYOUT ITEM -->
 
+        <?php /** ?>
         <!-- PAGE NAVIGATION -->
         <div class="page-navigation blue spaced" style="display: none">
             <!-- CONTROL PREVIOUS -->
@@ -129,6 +114,7 @@ $result_all = $DBcon->query($query_item);
             <!-- /CONTROL PREVIOUS -->
         </div>
         <!-- /PAGE NAVIGATION -->
+        <?php **/ ?>
     </div>
     <!-- /LAYOUT BODY -->
 

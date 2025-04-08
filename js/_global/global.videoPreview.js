@@ -6,7 +6,7 @@
     // hide overlay
     this.querySelector('.post-preview-overlay').style.visibility = 'hidden';
     // hide img
-    this.querySelector('.post-preview-img').style.visibility = 'hidden';
+    this.querySelector('.post_preview_img').style.visibility = 'hidden';
     // show video
     this.querySelector('.post-preview-video-wrap').style.visibility = 'visible';
 

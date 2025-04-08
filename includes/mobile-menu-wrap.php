@@ -14,26 +14,15 @@
 
     <!-- MOBILE MENU -->
     <ul class="mobile-menu">
-        <!-- MOBILE MENU ITEM -->
         <li class="mobile-menu-item">
             <a href="/" class="mobile-menu-item-link">Home</a>
         </li>
-        <!-- /MOBILE MENU ITEM -->
-        <!-- MAIN MENU ITEM -->
         <li class="mobile-menu-item">
             <a href="/guides/" class="mobile-menu-item-link">Guides</a>
         </li>
-        <!-- /MAIN MENU ITEM -->
-        <!-- MAIN MENU ITEM -->
-        <li class="mobile-menu-item">
-            <a href="/news/" class="mobile-menu-item-link">News</a>
-        </li>
-        <!-- /MAIN MENU ITEM -->
-        <!-- MAIN MENU ITEM -->
         <li class="mobile-menu-item">
             <a href="/reviews/" class="mobile-menu-item-link">Reviews</a>
         </li>
-        <!-- /MAIN MENU ITEM -->
     </ul>
     <!-- /MOBILE MENU -->
 </div>

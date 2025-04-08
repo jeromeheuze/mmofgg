@@ -12,26 +12,15 @@
 
         <!-- MAIN MENU -->
         <ul class="main-menu">
-            <!-- MAIN MENU ITEM -->
             <li class="main-menu-item">
                 <a href="/" class="main-menu-item-link">Home</a>
             </li>
-            <!-- /MAIN MENU ITEM -->
-            <!-- MAIN MENU ITEM -->
             <li class="main-menu-item">
                 <a href="/guides/" class="main-menu-item-link">Guides</a>
             </li>
-            <!-- /MAIN MENU ITEM -->
-            <!-- MAIN MENU ITEM -->
-            <li class="main-menu-item">
-                <a href="/news/" class="main-menu-item-link">News</a>
-            </li>
-            <!-- /MAIN MENU ITEM -->
-            <!-- MAIN MENU ITEM -->
             <li class="main-menu-item">
                 <a href="/reviews/" class="main-menu-item-link">Reviews</a>
             </li>
-            <!-- /MAIN MENU ITEM -->
         </ul>
         <!-- /MAIN MENU -->
     </div>

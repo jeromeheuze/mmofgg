@@ -1,6 +1,12 @@
 <?php
 include "./../includes/global.php";
 require_once './../bin/dbconnect.php';
+include "./../bin/class/Pages.php";
+
+$Pages = new Pages(DBHOST, DBUSER, DBPASS, DBNAME);
+$slug = "/guides/albion-online-lets-start-fishing.php";
+$Pages->incrementTotalVisitsFromSlug($slug);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +15,7 @@ require_once './../bin/dbconnect.php';
     <?php
     $title = "Albion Online - Let's start fishing! | Guides | MMO Fishing Games";
     $description = "MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.";
-    $url = "https://mmofishing.games/guides/albion-online-lets-start-fishing.php";
+    $url = "https://mmofishing.games".$slug;
     ?>
     <title><?=$title?></title>
     <meta name="description" content="<?=$description?>">
@@ -37,7 +43,7 @@ require_once './../bin/dbconnect.php';
             <div class="post-open movie-news">
                 <!-- POST OPEN IMG -->
                 <figure class="post-open-img liquid">
-                    <img src="/img/games/albion-online-fishing.jpeg" alt="post-13">
+                    <img src="/img/games/albion-online-fishing.jpg" alt="Albion Online">
                 </figure>
                 <!-- /POST OPEN IMG -->
 
@@ -123,29 +129,14 @@ require_once './../bin/dbconnect.php';
                     <div class="post-open-sidebar">
                         <!-- SOCIAL LINKS -->
                         <div class="social-links medium vertical animated">
-                            <!-- BUBBLE ORNAMENT -->
-                            <a target="_blank" href="https://www.facebook.com/sharer.php?u=<?=$url?>" class="bubble-ornament big fb">
-                                <!-- FACEBOOK ICON -->
-                                <svg class="facebook-icon big">
-                                    <use xlink:href="#svg-facebook"></use>
-                                </svg>
-                                <!-- /FACEBOOK ICON -->
-                                <p class="bubble-ornament-text">Share</p>
-                                <p class="bubble-ornament-text hover-replace">Now</p>
-                            </a>
-                            <!-- /BUBBLE ORNAMENT -->
 
-                            <!-- BUBBLE ORNAMENT -->
                             <a target="_blank" href="https://twitter.com/intent/tweet?url=<?=$url?>&text=<?=urlencode($title)?>&via=E2Prod&hashtags=mmofishing" class="bubble-ornament big twt">
-                                <!-- TWITTER ICON -->
                                 <svg class="twitter-icon big">
                                     <use xlink:href="#svg-twitter"></use>
                                 </svg>
-                                <!-- /TWITTER ICON -->
                                 <p class="bubble-ornament-text">Share</p>
                                 <p class="bubble-ornament-text hover-replace">Now</p>
                             </a>
-                            <!-- /BUBBLE ORNAMENT -->
 
                         </div>
                         <!-- /SOCIAL LINKS -->
@@ -156,18 +147,15 @@ require_once './../bin/dbconnect.php';
 
                 <!-- POST OPEN TAGS -->
                 <div class="post-open-tags">
-                    <!-- TAG LIST -->
                     <div class="tag-list">
-                        <!-- TAG ITEM -->
-                        <a href="/" class="tag-item">Albion Online</a>
-                        <!-- /TAG ITEM -->
+                        <a href="/tags/albion-online/" class="tag-item">Albion Online</a>
                     </div>
-                    <!-- /TAG LIST -->
                 </div>
                 <!-- /POST OPEN TAGS -->
             </div>
             <!-- /POST OPEN -->
 
+            <?php /** ?>
             <!-- WIDGET NEWS -->
             <div class="widget-news">
                 <!-- SECTION TITLE WRAP -->
@@ -321,7 +309,7 @@ require_once './../bin/dbconnect.php';
                 <!-- /POST PREVIEW SHOWCASE -->
             </div>
             <!-- /WIDGET NEWS -->
-
+            <?php **/ ?>
         </div>
         <!-- /LAYOUT ITEM -->
 
@@ -330,178 +318,10 @@ require_once './../bin/dbconnect.php';
 
     <!-- LAYOUT SIDEBAR -->
     <div class="layout-sidebar layout-item gutter-medium">
-        <!-- WIDGET SIDEBAR -->
-        <div class="widget-sidebar">
-            <!-- SECTION TITLE WRAP -->
-            <div class="section-title-wrap blue">
-                <h2 class="section-title medium">Popular Posts</h2>
-                <div class="section-title-separator"></div>
-            </div>
-            <!-- /SECTION TITLE WRAP -->
-
-            <!-- POST PREVIEW SHOWCASE -->
-            <div class="post-preview-showcase grid-1col centered gutter-small">
-                <!-- POST PREVIEW -->
-                <div class="post-preview tiny gaming-news">
-                    <!-- POST PREVIEW IMG WRAP -->
-                    <a href="post-v1.html">
-                        <div class="post-preview-img-wrap">
-                            <!-- POST PREVIEW IMG -->
-                            <figure class="post-preview-img liquid">
-                                <img src="/img/posts/01.jpg" alt="post-01">
-                            </figure>
-                            <!-- /POST PREVIEW IMG -->
-                        </div>
-                    </a>
-                    <!-- /POST PREVIEW IMG WRAP -->
-
-                    <!-- POST PREVIEW TITLE -->
-                    <a href="post-v1.html" class="post-preview-title">The Clash of Dragons is breaking record sales in USA and Japan</a>
-                    <!-- POST AUTHOR INFO -->
-                    <div class="post-author-info-wrap">
-                        <p class="post-author-info small light">By <a href="search-results.html" class="post-author">Dexter</a><span class="separator">|</span>Dec 15th, 2018</p>
-                    </div>
-                    <!-- /POST AUTHOR INFO -->
-                </div>
-                <!-- /POST PREVIEW -->
-
-            </div>
-            <!-- /POST PREVIEW SHOWCASE -->
-        </div>
-        <!-- /WIDGET SIDEBAR -->
-
-        <!-- WIDGET SIDEBAR -->
-        <div class="widget-sidebar">
-            <!-- SECTION TITLE WRAP -->
-            <div class="section-title-wrap red">
-                <h2 class="section-title medium">Latest Reviews</h2>
-                <div class="section-title-separator"></div>
-            </div>
-            <!-- /SECTION TITLE WRAP -->
-
-            <!-- POST PREVIEW SHOWCASE -->
-            <div class="post-preview-showcase grid-1col centered gutter-small">
-                <!-- POST PREVIEW -->
-                <div class="post-preview tiny game-review">
-                    <!-- POST PREVIEW IMG WRAP -->
-                    <a href="post-v2.html">
-                        <div class="post-preview-img-wrap">
-                            <!-- POST PREVIEW IMG -->
-                            <figure class="post-preview-img liquid">
-                                <img src="/img/posts/16.jpg" alt="post-16">
-                            </figure>
-                            <!-- /POST PREVIEW IMG -->
-
-                            <!-- REVIEW RATING -->
-                            <div class="review-rating">
-                                <div id="sidebar-rate-2" class="arc tiny"></div>
-                            </div>
-                            <!-- /REVIEW RATING -->
-                        </div>
-                    </a>
-                    <!-- /POST PREVIEW IMG WRAP -->
-
-                    <!-- POST PREVIEW TITLE -->
-                    <a href="post-v2.html" class="post-preview-title">We reviewed the new Magimons game</a>
-                    <!-- POST AUTHOR INFO -->
-                    <div class="post-author-info-wrap">
-                        <p class="post-author-info small light">By <a href="search-results.html" class="post-author">Vellatrix</a><span class="separator">|</span>Dec 15th, 2018</p>
-                    </div>
-                    <!-- /POST AUTHOR INFO -->
-                </div>
-                <!-- /POST PREVIEW -->
-
-            </div>
-            <!-- /POST PREVIEW SHOWCASE -->
-        </div>
-        <!-- /WIDGET SIDEBAR -->
-
-        <!-- WIDGET SIDEBAR -->
-        <div class="widget-sidebar">
-            <!-- PROMO ADVERT -->
-            <div class="promo-advert">
-                <a href="#">
-                    <!-- PROMO ADVERT IMG -->
-                    <img class="promo-advert-img" src="/img/banners/promo-ad-1.jpg" alt="promo-ad-1">
-                    <!-- /PROMO ADVERT IMG -->
-                </a>
-            </div>
-            <!-- /PROMO ADVERT -->
-        </div>
-        <!-- /WIDGET SIDEBAR -->
-
-        <!-- WIDGET SIDEBAR -->
-        <div class="widget-sidebar">
-            <!-- SECTION TITLE WRAP -->
-            <div class="section-title-wrap cyan">
-                <h2 class="section-title medium">Featured Video</h2>
-                <div class="section-title-separator"></div>
-            </div>
-            <!-- /SECTION TITLE WRAP -->
-
-            <!-- POST PREVIEW SHOWCASE -->
-            <div class="post-preview-showcase grid-1col centered">
-                <!-- POST PREVIEW -->
-                <div class="post-preview video">
-                    <!-- POST PREVIEW IMG WRAP -->
-                    <a href="post-video.html">
-                        <div class="post-preview-img-wrap">
-                            <!-- POST PREVIEW IMG -->
-                            <figure class="post-preview-img liquid">
-                                <img src="/img/posts/03.jpg" alt="post-03">
-                            </figure>
-                            <!-- /POST PREVIEW IMG -->
-
-                            <!-- POST PREVIEW OVERLAY -->
-                            <div class="post-preview-overlay">
-                                <!-- PLAY BUTTON -->
-                                <div class="play-button">
-                                    <!-- PLAY BUTTON ICON -->
-                                    <svg class="play-button-icon">
-                                        <use xlink:href="#svg-play"></use>
-                                    </svg>
-                                    <!-- /PLAY BUTTON ICON -->
-                                </div>
-                                <!-- /PLAY BUTTON -->
-
-                                <!-- POST PREVIEW OVERLAY INFO -->
-                                <div class="post-preview-overlay-info">
-                                    <!-- POST PREVIEW TITLE -->
-                                    <p class="post-preview-title">"The Sandbenders II" break the bad sequel spell with a...</p>
-                                    <!-- POST PREVIEW TEXT -->
-                                    <p class="post-preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                                </div>
-                                <!-- /POST PREVIEW OVERLAY INFO -->
-                            </div>
-                            <!-- /POST PREVIEW OVERLAY -->
-                        </div>
-                    </a>
-                    <!-- /POST PREVIEW IMG WRAP -->
-                </div>
-                <!-- /POST PREVIEW -->
-            </div>
-            <!-- /POST PREVIEW SHOWCASE -->
-        </div>
-        <!-- /WIDGET SIDEBAR -->
-
-        <!-- WIDGET SIDEBAR -->
-        <div class="widget-sidebar">
-            <!-- SECTION TITLE WRAP -->
-            <div class="section-title-wrap blue">
-                <h2 class="section-title medium">Pixel Tags</h2>
-                <div class="section-title-separator"></div>
-            </div>
-            <!-- /SECTION TITLE WRAP -->
-
-            <!-- TAG LIST -->
-            <div class="tag-list">
-                <!-- TAG ITEM -->
-                <a href="/" class="tag-item">Albion Online</a>
-                <!-- /TAG ITEM -->
-            </div>
-            <!-- /TAG LIST -->
-        </div>
-        <!-- /WIDGET SIDEBAR -->
+        <?php include "./../modules/sidebar-popular-posts-4x.php" ?>
+        <?php include "./../modules/sidebar-latest-reviews-4x.php" ?>
+        <?php include "./../modules/sidebar-banner-ad-250x250.php" ?>
+        <?php include "./../modules/sidebar-tags.php" ?>
     </div>
     <!-- /LAYOUT SIDEBAR -->
 </div>
