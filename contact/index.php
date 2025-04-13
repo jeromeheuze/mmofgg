@@ -1,5 +1,6 @@
 <?php
 include "./../includes/global.php";
+require_once './../bin/dbconnect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

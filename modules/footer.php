@@ -24,83 +24,61 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="widget widget_recent_post">
                     <h5 class="widget-title">POPULAR GUIDES</h5>
+                    <?php
+                    $query_item_g = "SELECT * FROM content WHERE active='1' AND type='guides' ORDER BY total_visits DESC LIMIT 2";
+                    mysqli_set_charset($DBcon,"utf8");
+                    $result_2g = $DBcon->query($query_item_g);
+
+                    while ($row = $result_2g->fetch_assoc()) {
+                    ?>
                     <div class="single-post-list-wrap style-white">
                         <div class="media">
                             <div class="media-left">
-                                <img src="/assets/img/post/list/1.png" alt="img">
+                                <img src="<?=$row['post_preview_icon'];?>" alt="img">
                             </div>
                             <div class="media-body">
                                 <div class="details">
                                     <div class="post-meta-single">
                                         <ul>
-                                            <li><i class="fa fa-clock-o"></i>08.22.2020</li>
+                                            <li><i class="fa fa-clock-o"></i><?=$row['created'];?></li>
                                         </ul>
                                     </div>
-                                    <h6 class="title"><a href="blog-details.html">Himachal Pradesh rules in order to
-                                            allow tourists </a></h6>
+                                    <h6 class="title"><a href="<?=$row['post_preview_url'];?>"><?=$row['post_preview_title'];?></a></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="single-post-list-wrap style-white">
-                        <div class="media">
-                            <div class="media-left">
-                                <img src="/assets/img/post/list/2.png" alt="img">
-                            </div>
-                            <div class="media-body">
-                                <div class="details">
-                                    <div class="post-meta-single">
-                                        <ul>
-                                            <li><i class="fa fa-clock-o"></i>08.22.2020</li>
-                                        </ul>
-                                    </div>
-                                    <h6 class="title"><a href="blog-details.html">Himachal Pradesh rules in order to
-                                            allow tourists </a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="widget widget_recent_post">
                     <h5 class="widget-title">POPULAR REVIEWS</h5>
+                    <?php
+                    $query_item_g = "SELECT * FROM content WHERE active='1' AND type='reviews' ORDER BY total_visits DESC LIMIT 2";
+                    mysqli_set_charset($DBcon,"utf8");
+                    $result_2g = $DBcon->query($query_item_g);
+
+                    while ($row = $result_2g->fetch_assoc()) {
+                    ?>
                     <div class="single-post-list-wrap style-white">
                         <div class="media">
                             <div class="media-left">
-                                <img src="/assets/img/post/list/1.png" alt="img">
+                                <img src="<?=$row['post_preview_icon'];?>" alt="img">
                             </div>
                             <div class="media-body">
                                 <div class="details">
                                     <div class="post-meta-single">
                                         <ul>
-                                            <li><i class="fa fa-clock-o"></i>08.22.2020</li>
+                                            <li><i class="fa fa-clock-o"></i><?=$row['created'];?></li>
                                         </ul>
                                     </div>
-                                    <h6 class="title"><a href="blog-details.html">Himachal Pradesh rules in order to
-                                            allow tourists </a></h6>
+                                    <h6 class="title"><a href="<?=$row['post_preview_url'];?>"><?=$row['post_preview_title'];?></a></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="single-post-list-wrap style-white">
-                        <div class="media">
-                            <div class="media-left">
-                                <img src="/assets/img/post/list/2.png" alt="img">
-                            </div>
-                            <div class="media-body">
-                                <div class="details">
-                                    <div class="post-meta-single">
-                                        <ul>
-                                            <li><i class="fa fa-clock-o"></i>08.22.2020</li>
-                                        </ul>
-                                    </div>
-                                    <h6 class="title"><a href="blog-details.html">Himachal Pradesh rules in order to
-                                            allow tourists </a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
