@@ -9,7 +9,7 @@ $inactive = 60;
 
 $today = date('Y-m-d');
 
-const VERSION = "0.0.0.006";
+const VERSION = "0.0.0.020";
 const SALT = "MnQJKty9fTvfXJHrZjq5";
 
 //utilities

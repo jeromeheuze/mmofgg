@@ -2,7 +2,7 @@
 include "./includes/global.php";
 require_once './bin/dbconnect.php';
 
-$query_item = "SELECT * FROM content WHERE active='1' ORDER BY created DESC LIMIT 10";
+$query_item = "SELECT * FROM content WHERE active='1' ORDER BY created DESC LIMIT 4";
 mysqli_set_charset($DBcon,"utf8");
 $result_all = $DBcon->query($query_item);
 
@@ -24,133 +24,119 @@ $result_all = $DBcon->query($query_item);
     <meta property="og:description" content="<?=$description?>">
     <meta name="twitter:title" content="<?=$title?>">
     <meta name="twitter:description" content="<?=$description?>">
-
     <?php include "./includes/ga.php" ?>
 </head>
 <body>
-<?php include "./includes/mobile-menu-wrap.php" ?>
-<?php include "./includes/navigation-wrap.php" ?>
-<?php include "./includes/mobile-menu-pull.php" ?>
-<?php //include "./modules/live-news-widget.php" ?>
-
-<div class="banner-wrap e-sport">
-    <!-- BANNER -->
-    <div class="banner grid-limit">
-        <h1 class="banner-title">MMO Fishing Games</h1>
-        <p class="banner-sections">
-            <span class="banner-section">Home</span>
-            <!-- ARROW ICON -->
-            <svg class="arrow-icon">
-                <use xlink:href="#svg-arrow"></use>
-            </svg>
-            <!-- /ARROW ICON -->
-            <span class="banner-section">Hub for finding fishing video games</span>
-        </p>
-    </div>
-    <!-- /BANNER -->
+<?php include "./modules/preloader.php" ?>
+<?php include "./modules/search_popup.php" ?>
+<div class="body-overlay" id="body-overlay"></div>
+<!-- header start -->
+<div class="navbar-area">
+    <?php include "./modules/topbar.php" ?>
+    <?php include "./modules/adbar.php" ?>
+    <?php include "./modules/navbar.php" ?>
 </div>
+<!-- header end -->
 
-<!-- LAYOUT CONTENT 1 -->
-<div class="layout-content-1 layout-item-3-1 grid-limit">
-    <!-- LAYOUT BODY -->
-    <div class="layout-body">
-        <!-- LAYOUT ITEM -->
-        <div class="layout-item gutter-big">
-            <div class="layout-item">
-
-                <?php
-                if ($result_all != null) {
-                    while ($row = $result_all->fetch_assoc()) {
-                        $class_color = "";
-                        if ($row["type"] === "guides") {
-                            $class_color = " movie-news";
-                        } else if ($row["type"] === "reviews") {
-                            $class_color = " game-review";
-                        } else {
-                            $class_color = " gaming-news";
-                        }
-                        ?>
-                        <div class="post-preview landscape big<?=$class_color;?>">
-                            <a href="<?=$row["post_preview_url"]?>">
-                                <div class="post-preview-img-wrap">
-                                    <figure class="post-preview-img liquid">
-                                        <img src="<?=$row["post_preview_img"]?>" alt="<?=$row["post_preview_title"]?>">
-                                    </figure>
-                                </div>
-                            </a>
-                            <?php if ($row["type"] === "guides") { ?>
-                                <a href="/guides/" class="tag-ornament">Game Guide</a>
-                            <?php } else if ($row["type"] === "reviews") { ?>
-                                <a href="/reviews/" class="tag-ornament">Game Review</a>
-                            <?php } ?>
-                            <a href="<?=$row["post_preview_url"]?>" class="post-preview-title"><?=$row["post_preview_title"]?></a>
-                            <div class="post-author-info-wrap">
-                                <figure class="user-avatar tiny liquid">
-                                    <img src="<?=$row["user_avatar"]?>" alt="user-admin">
-                                </figure>
-                                <p class="post-author-info small light">By <span class="post-author"><?=$row["post_author"]?></span><span class="separator">|</span><?=$row["created"]?></p>
-                            </div>
-                            <p class="post-preview-text"><?=$row["post_preview_text"]?></p>
+<!-- banner area start -->
+<div class="banner-area banner-inner-1 bg-black">
+    <!-- banner area start -->
+    <div class="banner-inner pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="thumb after-left-top">
+                        <img src="/assets/games/albion-online-fishing.jpg" alt="img">
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-center">
+                    <div class="banner-details mt-4 mt-lg-0">
+                        <div class="post-meta-single">
+                            <ul>
+                                <li><a class="tag-base tag-yellow" href="/guides/">Guides</a></li>
+                                <li class="date"><i class="fa fa-clock-o"></i>2025-01-25</li>
+                            </ul>
                         </div>
-                        <?php
-                    }
-                } else {
-                    ?>
-                    <div class="post-preview landscape big gaming-news">No Tags</div>
-                <?php } ?>
-
+                        <h2>Albion Online - Let's start fishing!</h2>
+                        <p>Fishing in AO is quite interesting - you can reach level 100 and wear special clothing to increase your fishing performance.</p>
+                        <a class="btn btn-blue" href="/">Read More</a>
+                    </div>
+                </div>
             </div>
-
         </div>
-        <!-- /LAYOUT ITEM -->
-
-        <?php /** ?>
-        <!-- PAGE NAVIGATION -->
-        <div class="page-navigation blue spaced" style="display: none">
-        <!-- CONTROL PREVIOUS -->
-        <div class="slider-control big control-previous">
-        <!-- ARROW ICON -->
-        <svg class="arrow-icon medium">
-        <use xlink:href="#svg-arrow-medium"></use>
-        </svg>
-        <!-- /ARROW ICON -->
-        </div>
-        <!-- /CONTROL PREVIOUS -->
-        <a href="#" class="page-navigation-item">1</a>
-        <a href="#" class="page-navigation-item active">2</a>
-        <a href="#" class="page-navigation-item">3</a>
-        <a href="#" class="page-navigation-item">...</a>
-        <a href="#" class="page-navigation-item">8</a>
-        <!-- CONTROL PREVIOUS -->
-        <div class="slider-control big control-next">
-        <!-- ARROW ICON -->
-        <svg class="arrow-icon medium">
-        <use xlink:href="#svg-arrow-medium"></use>
-        </svg>
-        <!-- /ARROW ICON -->
-        </div>
-        <!-- /CONTROL PREVIOUS -->
-        </div>
-        <!-- /PAGE NAVIGATION -->
-        <?php **/ ?>
     </div>
-    <!-- /LAYOUT BODY -->
-
-    <!-- LAYOUT SIDEBAR -->
-    <div class="layout-sidebar layout-item gutter-medium">
-
-        <?php include "./modules/sidebar-popular-posts-4x.php" ?>
-        <?php include "./modules/sidebar-latest-reviews-4x.php" ?>
-        <?php include "./modules/sidebar-banner-ad-250x250.php" ?>
-        <?php include "./modules/sidebar-tags.php" ?>
-
-    </div>
-    <!-- /LAYOUT SIDEBAR -->
+    <!-- banner area end -->
 </div>
-<!-- /LAYOUT CONTENT 1 -->
 
-<?php include "./includes/footer-top-wrap.php" ?>
-<?php include "./includes/footer-bottom-wrap.php" ?>
+<div class="dont-miss-area pd-top-75 pd-bottom-50">
+    <div class="container">
+        <div class="section-title">
+            <div class="row">
+                <div class="col-6">
+                    <h6 class="title">Top News</h6>
+                </div>
+                <div class="col-6 text-center text-md-right">
+<!--                    <a class="btn-read-more" href="/">See More <i class="la la-arrow-right"></i></a>-->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <?php
+            if ($result_all != null) {
+            while ($row = $result_all->fetch_assoc()) {
+                $class_color = "";
+                if ($row["type"] === "guides") {
+                    $class_color = " tag-yellow";
+                } else if ($row["type"] === "reviews") {
+                    $class_color = " tag-red";
+                } else {
+                    $class_color = " tag-blue";
+                }
+            ?>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-post-wrap style-box">
+                    <div class="thumb">
+                        <img src="<?=$row["post_preview_img"]?>" alt="<?=$row["post_preview_title"]?>">
+                    </div>
+                    <div class="details">
+                        <div class="post-meta-single mb-4 pt-1">
+                            <ul>
+                                <li><a class="text-capitalize tag-base<?=$class_color?>" href="/<?=$row["type"];?>/"><?=$row["type"];?></a></li>
+                            </ul>
+                        </div>
+                        <h6 class="title"><a href="<?=$row["post_preview_url"]?>"><?=$row["post_preview_title"]?></a></h6>
+                        <p><?=$row["post_preview_text"]?></p>
+                        <div class="spw-bottom">
+                            <ul>
+                                <li>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img src="<?=$row["user_avatar"]?>" alt="<?=$row["post_author"]?>">
+                                        </div>
+                                        <div class="media-body align-self-center">
+                                            <p class="text-capitalize"><?=$row["post_author"]?></p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><?=$row["created"]?></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+            }
+            } else {
+            ?>
+            <div class="col-lg-3 col-sm-6">No News</div>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+
+<?php include "./modules/footer.php" ?>
 <?php include "./includes/global_footer.php" ?>
 </body>
 </html>

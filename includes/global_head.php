@@ -3,7 +3,10 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="ahrefs-site-verification" content="c7f503fdb19856ca81b6173a16579daf588b1bb8b01a45a99b835e4049c25bef">
 <!-- style -->
-<link rel="stylesheet" href="/css/style.min.css">
+<!-- Stylesheet -->
+<link rel="stylesheet" href="/assets/css/vendor.css?v=<?=VERSION?>">
+<link rel="stylesheet" href="/assets/css/style.css?v=<?=VERSION?>">
+<link rel="stylesheet" href="/assets/css/responsive.css?v=<?=VERSION?>">
 
 <!-- SEO -->
 <meta name="author" content="MMO Fishing Games">

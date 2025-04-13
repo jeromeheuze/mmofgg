@@ -13,6 +13,30 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
+     <link>https://mmofishing.games/author/</link>
+     <title>Author | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/advertisement/</link>
+     <title>Advertisement | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/submit-a-game/</link>
+     <title>Submit A Game | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
      <link>https://mmofishing.games/guides/</link>
      <title>Guides | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
@@ -23,6 +47,14 @@
 <item>
      <link>https://mmofishing.games/reviews/</link>
      <title>Reviews | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/guides/albion-online-adept-fishing-gear.php</link>
+     <title>Albion Online - Adept's Fishing Gears | Guides | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
@@ -45,11 +77,51 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
+     <link>https://mmofishing.games/tags/albion-online/</link>
+     <title>albion online | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
      <link>https://mmofishing.games/404.php</link>
      <title>404 | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/terms/</link>
+     <title>Terms of Service | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/privacy-policy/</link>
+     <title>Privacy Policy | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/contact/</link>
+     <title>Contact | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/tags/albion-online/blog-details.html</link>
+     <title>albion online | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 </channel>
