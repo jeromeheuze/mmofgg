@@ -6,6 +6,8 @@ $query_item = "SELECT * FROM content WHERE active='1' ORDER BY created DESC LIMI
 mysqli_set_charset($DBcon,"utf8");
 $result_all = $DBcon->query($query_item);
 
+//fetch latest limit 1
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,20 +48,20 @@ $result_all = $DBcon->query($query_item);
             <div class="row">
                 <div class="col-lg-6">
                     <div class="thumb after-left-top">
-                        <img src="/assets/games/albion-online-fishing.jpg" alt="img">
+                        <img src="/assets/games/albion-online-fishing.jpg" alt="Albion Online">
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center">
                     <div class="banner-details mt-4 mt-lg-0">
                         <div class="post-meta-single">
                             <ul>
-                                <li><a class="tag-base tag-yellow" href="/guides/">Guides</a></li>
-                                <li class="date"><i class="fa fa-clock-o"></i>2025-01-25</li>
+                                <li><a class="tag-base tag-red" href="/reviews/">Reviews</a></li>
+                                <li class="date"><i class="fa fa-clock-o"></i><?=date("F d, Y", strtotime("2025-01-11"))?></li>
                             </ul>
                         </div>
-                        <h2>Albion Online - Let's start fishing!</h2>
-                        <p>Fishing in AO is quite interesting - you can reach level 100 and wear special clothing to increase your fishing performance.</p>
-                        <a class="btn btn-blue" href="/">Read More</a>
+                        <h2>Albion Online - Fishing review 2025</h2>
+                        <p>Albion Online is a sandbox MMORPG set in the medieval fantasy world of Albion.</p>
+                        <a class="btn btn-blue" href="/reviews/albion-online-review.php">Read More</a>
                     </div>
                 </div>
             </div>
@@ -119,7 +121,7 @@ $result_all = $DBcon->query($query_item);
                                     </div>
                                 </li>
                                 <li>
-                                    <p><?=$row["created"]?></p>
+                                    <p><?=date("F d, Y", strtotime($row["created"]))?></p>
                                 </li>
                             </ul>
                         </div>

@@ -27,7 +27,7 @@ if ($slug !== '') {
 <head>
     <?php include "./../includes/global_head.php" ?>
     <?php
-    $title = $slug_text." | MMO Fishing Games";
+    $title = ucfirst($slug_text)." | MMO Fishing Games";
     $description = "MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.";
     $url = "https://mmofishing.games/tags/".$slug_url."/";
     ?>
@@ -58,7 +58,7 @@ if ($slug !== '') {
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-inner">
-                    <h5 class="page-title"><?=$slug_text?></h5>
+                    <h5 class="page-title"><?=ucfirst($slug_text)?></h5>
                     <ul class="page-list">
                         <li><a href="/">Home</a></li>
                         <li>Tags</li>
@@ -93,6 +93,7 @@ if ($slug !== '') {
                                         </ul>
                                     </div>
                                     <h6 class="title"><a href="<?=$row["post_preview_url"]?>"><?=$row["post_preview_title"]?></a></h6>
+                                    <p><?=date("F d, Y", strtotime($row["created"]))?></p>
                                     <p><?=$row["post_preview_text"]?></p>
                                     <a class="btn btn-base mt-4" href="<?=$row["post_preview_url"]?>">Read more</a>
                                 </div>

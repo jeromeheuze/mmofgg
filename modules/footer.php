@@ -40,7 +40,7 @@
                                 <div class="details">
                                     <div class="post-meta-single">
                                         <ul>
-                                            <li><i class="fa fa-clock-o"></i><?=$row['created'];?></li>
+                                            <li><i class="fa fa-clock-o"></i><?=date("F d, Y", strtotime($row["created"]))?></li>
                                         </ul>
                                     </div>
                                     <h6 class="title"><a href="<?=$row['post_preview_url'];?>"><?=$row['post_preview_title'];?></a></h6>
@@ -70,7 +70,7 @@
                                 <div class="details">
                                     <div class="post-meta-single">
                                         <ul>
-                                            <li><i class="fa fa-clock-o"></i><?=$row['created'];?></li>
+                                            <li><i class="fa fa-clock-o"></i><?=date("F d, Y", strtotime($row["created"]))?></li>
                                         </ul>
                                     </div>
                                     <h6 class="title"><a href="<?=$row['post_preview_url'];?>"><?=$row['post_preview_title'];?></a></h6>

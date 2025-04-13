@@ -74,6 +74,7 @@ $result_all = $DBcon->query($query_item);
                                     </ul>
                                 </div>
                                 <h6 class="title"><a href="<?=$row["post_preview_url"]?>"><?=$row["post_preview_title"]?></a></h6>
+                                <p><?=date("F d, Y", strtotime($row["created"]))?></p>
                                 <p><?=$row["post_preview_text"]?></p>
                                 <a class="btn btn-base mt-4" href="<?=$row["post_preview_url"]?>">Read more</a>
                             </div>
