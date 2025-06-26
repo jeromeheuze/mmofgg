@@ -1,13 +1,17 @@
 <?php
 include "./includes/global.php";
 require_once './bin/dbconnect.php';
+// Ensure UTF-8 encoding
+$DBcon->set_charset('utf8mb4');
 
-$query_item = "SELECT * FROM content WHERE active='1' ORDER BY created DESC LIMIT 4";
-mysqli_set_charset($DBcon,"utf8");
-$result_all = $DBcon->query($query_item);
-
-//fetch latest limit 1
-
+// Fetch all games for display (limit to 8 or paginate as needed)
+$query = "
+SELECT id, title, slug, platform, model, fishing_style, thumbnail
+FROM games
+ORDER BY title ASC
+LIMIT 8
+";
+$result_games = $DBcon->query($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,103 +44,81 @@ $result_all = $DBcon->query($query_item);
 </div>
 <!-- header end -->
 
+<!-- Directory Preview Section -->
+<?php
+// Banner: Fetch Albion Online
+$bannerStmt = $DBcon->prepare("SELECT title, slug, thumbnail, description, release_date FROM games WHERE slug = 'albion-online' LIMIT 1");
+$bannerStmt->execute();
+$bannerGame = $bannerStmt->get_result()->fetch_assoc();
+?>
 <!-- banner area start -->
 <div class="banner-area banner-inner-1 bg-black">
-    <!-- banner area start -->
     <div class="banner-inner pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="thumb after-left-top">
-                        <img src="/assets/games/albion-online-fishing.jpg" alt="Albion Online">
+                        <img src="/assets/games/albion-online-fishing.jpg" alt="<?= htmlspecialchars($bannerGame['title']) ?>">
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center">
                     <div class="banner-details mt-4 mt-lg-0">
                         <div class="post-meta-single">
                             <ul>
-                                <li><a class="tag-base tag-red" href="/reviews/">Reviews</a></li>
-                                <li class="date"><i class="fa fa-clock-o"></i><?=date("F d, Y", strtotime("2025-01-11"))?></li>
+                                <li><a class="tag-base tag-blue" href="/game/<?= urlencode($bannerGame['slug']) ?>/">Explore Game</a></li>
+                                <li class="date"><i class="fa fa-clock-o"></i><?= date("F d, Y", strtotime($bannerGame['release_date'] ?? date('Y-m-d'))) ?></li>
                             </ul>
                         </div>
-                        <h2>Albion Online - Fishing review 2025</h2>
-                        <p>Albion Online is a sandbox MMORPG set in the medieval fantasy world of Albion.</p>
-                        <a class="btn btn-blue" href="/reviews/albion-online-review.php">Read More</a>
+                        <h2><?= htmlspecialchars($bannerGame['title']) ?> - Fishing Overview</h2>
+                        <p><?= nl2br(htmlspecialchars($bannerGame['description'])) ?></p>
+                        <a class="btn btn-blue" href="/game/<?= urlencode($bannerGame['slug']) ?>/">View Details</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- banner area end -->
 </div>
+<!-- banner area end -->
 
-<div class="dont-miss-area pd-top-75 pd-bottom-50">
+<!-- Directory Preview Section -->
+<section class="directory-preview pd-top-75 pd-bottom-50">
     <div class="container">
-        <div class="section-title">
-            <div class="row">
-                <div class="col-6">
-                    <h6 class="title">Top News</h6>
-                </div>
-                <div class="col-6 text-center text-md-right">
-<!--                    <a class="btn-read-more" href="/">See More <i class="la la-arrow-right"></i></a>-->
-                </div>
-            </div>
+        <div class="section-title text-center mb-5">
+            <h2>MMO Fishing Games Directory</h2>
+            <p>Browse our curated list of MMOs featuring in-game fishing mechanics.</p>
         </div>
         <div class="row">
-            <?php
-            if ($result_all != null) {
-            while ($row = $result_all->fetch_assoc()) {
-                $class_color = "";
-                if ($row["type"] === "guides") {
-                    $class_color = " tag-yellow";
-                } else if ($row["type"] === "reviews") {
-                    $class_color = " tag-red";
-                } else {
-                    $class_color = " tag-blue";
-                }
-            ?>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-post-wrap style-box">
-                    <div class="thumb">
-                        <img src="<?=$row["post_preview_img"]?>" alt="<?=$row["post_preview_title"]?>">
-                    </div>
-                    <div class="details">
-                        <div class="post-meta-single mb-4 pt-1">
-                            <ul>
-                                <li><a class="text-capitalize tag-base<?=$class_color?>" href="/<?=$row["type"];?>/"><?=$row["type"];?></a></li>
-                            </ul>
-                        </div>
-                        <h6 class="title"><a href="<?=$row["post_preview_url"]?>"><?=$row["post_preview_title"]?></a></h6>
-                        <p><?=$row["post_preview_text"]?></p>
-                        <div class="spw-bottom">
-                            <ul>
-                                <li>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <img src="<?=$row["user_avatar"]?>" alt="<?=$row["post_author"]?>">
-                                        </div>
-                                        <div class="media-body align-self-center">
-                                            <p class="text-capitalize"><?=$row["post_author"]?></p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <p><?=date("F d, Y", strtotime($row["created"]))?></p>
-                                </li>
-                            </ul>
+            <?php if ($result_games && $result_games->num_rows > 0): ?>
+                <?php while ($game = $result_games->fetch_assoc()): ?>
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="single-game-wrap style-box">
+                            <div class="thumb mb-4">
+                                <img src="<?= htmlspecialchars($game['thumbnail']) ?>" alt="<?= htmlspecialchars($game['title']) ?>">
+                            </div>
+                            <div class="details mt-2">
+                                <h6 class="title">
+                                    <a href="/game/<?= urlencode($game['slug']) ?>/"><?= htmlspecialchars($game['title']) ?></a>
+                                </h6>
+                                <div class="tags">
+                                    <span class="badge badge-platform"><?= htmlspecialchars($game['platform']) ?></span>
+                                    <span class="badge badge-model"><?= htmlspecialchars($game['model']) ?></span>
+                                </div>
+                                <p class="mt-2 small text-muted"><?= htmlspecialchars($game['fishing_style']) ?> style fishing</p>
+                            </div>
                         </div>
                     </div>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <div class="col-12 text-center">
+                    <p>No games found in the directory.</p>
                 </div>
-            </div>
-            <?php
-            }
-            } else {
-            ?>
-            <div class="col-lg-3 col-sm-6">No News</div>
-            <?php } ?>
+            <?php endif; ?>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/directory/" class="btn btn-primary">View Full Directory</a>
         </div>
     </div>
-</div>
+</section>
 
 <?php include "./modules/footer.php" ?>
 <?php include "./includes/global_footer.php" ?>

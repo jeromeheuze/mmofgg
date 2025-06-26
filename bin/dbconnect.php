@@ -6,13 +6,13 @@
 
 define("DBHOST", "localhost");
 define("DBUSER", "spectrum_mmo_u");
-define("DBPASS", "q(Aw4(8O?CIu");
+define("DBPASS", "c40{bR[s)bg742nr");
 define("DBNAME", "spectrum_mmofishing");
 
 $DBhost = "localhost";
 //prod
 $DBuser = "spectrum_mmo_u";
-$DBpass = "q(Aw4(8O?CIu";
+$DBpass = "c40{bR[s)bg742nr";
 $DBname = "spectrum_mmofishing";
 
 $DBcon = new MySQLi($DBhost,$DBuser,$DBpass,$DBname);

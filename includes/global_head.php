@@ -2,6 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="ahrefs-site-verification" content="c7f503fdb19856ca81b6173a16579daf588b1bb8b01a45a99b835e4049c25bef">
+<meta name="google-site-verification" content="w1F9X-G4T03fvfS3SR8_gamZvmjRoqMNFisstEqWFXE" />
+<meta name='impact-site-verification' content='1ae13c64-b501-4954-a63f-42b66dcd2246'>
 <!-- style -->
 <!-- Stylesheet -->
 <link rel="stylesheet" href="/assets/css/vendor.css?v=<?=VERSION?>">
@@ -9,7 +11,7 @@
 <link rel="stylesheet" href="/assets/css/responsive.css?v=<?=VERSION?>">
 
 <!-- SEO -->
-<meta name="author" content="MMO Fishing Games">
+<meta name="author" content="Jerome Heuze">
 <meta name="robots" content="index, follow">
 <meta name="language" content="English">
 <meta name="rating" content="General">

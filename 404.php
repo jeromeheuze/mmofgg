@@ -1,5 +1,9 @@
 <?php
 include "./includes/global.php";
+require_once './bin/dbconnect.php';
+
+// Ensure UTF-8 encoding
+$DBcon->set_charset('utf8mb4');
 ?>
 <!DOCTYPE html>
 <html lang="en">

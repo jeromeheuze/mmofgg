@@ -37,57 +37,129 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/guides/</link>
-     <title>Guides | MMO Fishing Games</title>
+     <link>https://mmofishing.games/directory/</link>
+     <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/reviews/</link>
-     <title>Reviews | MMO Fishing Games</title>
+     <link>https://mmofishing.games/directory/?platform[]=</link>
+     <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/guides/albion-online-adept-fishing-gear.php</link>
-     <title>Albion Online - Adept's Fishing Gears | Guides | MMO Fishing Games</title>
+     <link>https://mmofishing.games/directory/?platform[]=PC</link>
+     <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/guides/albion-online-lets-start-fishing.php</link>
-     <title>Albion Online - Let's start fishing! | Guides | MMO Fishing Games</title>
+     <link>https://mmofishing.games/directory/?platform[]=Cross-platform</link>
+     <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/reviews/albion-online-review.php</link>
-     <title>Albion Online - Fishing review 2025 | Reviews | MMO Fishing Games</title>
+     <link>https://mmofishing.games/directory/?model[]=Free-to-Play</link>
+     <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/tags/albion-online/</link>
-     <title>albion online | MMO Fishing Games</title>
+     <link>https://mmofishing.games/directory/?model[]=Subscription</link>
+     <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/404.php</link>
-     <title>404 | MMO Fishing Games</title>
+     <link>https://mmofishing.games/directory/?model[]=Buy-to-Play</link>
+     <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/directory/?fishing_style[]=Simulation</link>
+     <title>Directory | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/game/albion-online/</link>
+     <title>Albion Online | MMO Fishing Games</title>
+     <description>Albion Online features a full fishing skill line including rods and bait for freshwater and saltwater fish, a timing-based casting and reeling minigame, fishing yield buffs from pies, and crafted meals to enhance success rates.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/game/archeage/</link>
+     <title>ArcheAge | MMO Fishing Games</title>
+     <description>ArcheAge offers both bait fishing and sports fishing—craft rods and bait, cast in open water, and even deep-sea rod fishing from a rowboat or yacht.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/game/black-desert-online/</link>
+     <title>Black Desert Online | MMO Fishing Games</title>
+     <description>Black Desert Online&amp;#039;s fishing is a real-time minigame with timers, equipment upgrades, and ocean-depth exploration for rare catches.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/game/final-fantasy-xi/</link>
+     <title>Final Fantasy XI | MMO Fishing Games</title>
+     <description>FFXI’s Fishing profession uses rods, bait, and timing-based minigames; certain fish drops are used in crafting and achievements.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/game/final-fantasy-xiv/</link>
+     <title>Final Fantasy XIV | MMO Fishing Games</title>
+     <description>Final Fantasy XIV features a deep fishing system with multiple bait types, fish logs, catch-and-release events, and seasonal fishing tournaments.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/game/guild-wars-2/</link>
+     <title>Guild Wars 2 | MMO Fishing Games</title>
+     <description>Guild Wars 2 includes fishing in open-world lakes and rivers with collectible fish, crafting ingredients, and achievements.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/game/runescape/</link>
+     <title>RuneScape | MMO Fishing Games</title>
+     <description>RuneScape offers both free and members-only fishing areas, a Fishing skill for XP, and special lakes for high-level anglers.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/game/the-elder-scrolls-online/</link>
+     <title>The Elder Scrolls Online | MMO Fishing Games</title>
+     <description>ESO includes a full Fishing skill—catch trophy fish, farm Perfect Roe for provisioning, and use Psijic buffs to improve catch rates.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
@@ -117,8 +189,64 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/tags/albion-online/blog-details.html</link>
-     <title>albion online | MMO Fishing Games</title>
+     <link>https://mmofishing.games/directory/?page=1</link>
+     <title>Directory | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/directory/?platform%5B0%5D=&amp;page=1</link>
+     <title>Directory | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/directory/?platform%5B0%5D=PC&amp;page=1</link>
+     <title>Directory | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/directory/?platform%5B0%5D=Cross-platform&amp;page=1</link>
+     <title>Directory | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/directory/?model%5B0%5D=Free-to-Play&amp;page=1</link>
+     <title>Directory | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/directory/?model%5B0%5D=Subscription&amp;page=1</link>
+     <title>Directory | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/directory/?model%5B0%5D=Buy-to-Play&amp;page=1</link>
+     <title>Directory | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/directory/?fishing_style%5B0%5D=Simulation&amp;page=1</link>
+     <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>2</ror:sortOrder>
