@@ -111,13 +111,15 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
     }
     echo '</div>';
     // Render pagination
-    echo '<nav><ul class="pagination justify-content-center">';
-    for ($p = 1; $p <= $totalPages; $p++) {
-        $active = $p == ($_GET['page'] ?? 1) ? ' active' : '';
-        $query = array_merge($_GET, ['page' => $p]);
-        echo "<li class='page-item{$active}'><a class='page-link' href='?".http_build_query($query)."'>{$p}</a></li>";
+    if ($totalPages > 1) {
+        echo '<nav><ul class="pagination justify-content-center">';
+        for ($p = 1; $p <= $totalPages; $p++) {
+            $active = $p == ($_GET['page'] ?? 1) ? ' active' : '';
+            $query = array_merge($_GET, ['page' => $p]);
+            echo "<li class='page-item{$active}'><a class='page-link' href='?".http_build_query($query)."'>{$p}</a></li>";
+        }
+        echo '</ul></nav>';
     }
-    echo '</ul></nav>';
 
     ob_end_flush();
     exit;
@@ -143,6 +145,39 @@ $directoryLd = [
     "@type"              => "ItemList",
     "itemListElement"    => $itemList
 ];
+
+// Detect protocol (http or https)
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    ? 'https://'
+    : 'http://';
+
+// Base domain and path
+$base = $protocol . $_SERVER['HTTP_HOST'] . '/directory/';
+
+// Parse all supported query parameters
+$platform      = isset($_GET['platform'][0]) ? urlencode($_GET['platform'][0]) : null;
+$model         = isset($_GET['model'][0]) ? urlencode($_GET['model'][0]) : null;
+$fishing_style = isset($_GET['fishing_style'][0]) ? urlencode($_GET['fishing_style'][0]) : null;
+$page          = isset($_GET['page']) ? (int)$_GET['page'] : null;
+
+// Construct SEO-friendly path
+$seoPath = '';
+
+if ($platform) {
+    $seoPath .= 'platform/' . $platform . '/';
+}
+if ($model) {
+    $seoPath .= 'model/' . $model . '/';
+}
+if ($fishing_style) {
+    $seoPath .= 'fishing-style/' . $fishing_style . '/';
+}
+if ($page) {
+    $seoPath .= 'page/' . $page . '/';
+}
+
+// Final canonical URL
+$canonical = $base . $seoPath;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,7 +186,7 @@ $directoryLd = [
     <?php
     $title = "Directory | MMO Fishing Games";
     $description = "MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.";
-    $url = "https://mmofishing.games/directory/";
+    $url = $canonical;
     ?>
     <title><?=$title?></title>
     <meta name="description" content="<?=$description?>">

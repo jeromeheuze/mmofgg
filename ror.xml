@@ -22,8 +22,8 @@
 </item>
 <item>
      <link>https://mmofishing.games/advertisement/</link>
-     <title>Advertisement | MMO Fishing Games</title>
-     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <title>Advertise with MMO Fishing Games</title>
+     <description>Reach thousands of MMO gamers passionate about in-game fishing with targeted ad placements on MMO Fishing Games.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
@@ -45,7 +45,15 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?platform[]=</link>
+     <link>https://mmofishing.games/404.php</link>
+     <title>404 | MMO Fishing Games</title>
+     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mmofishing.games/directory/platform/PC/</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -53,7 +61,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?platform[]=PC</link>
+     <link>https://mmofishing.games/directory/platform/Cross-platform/</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -61,7 +69,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?platform[]=Cross-platform</link>
+     <link>https://mmofishing.games/directory/model/Free-to-Play/</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -69,7 +77,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?model[]=Free-to-Play</link>
+     <link>https://mmofishing.games/directory/model/Subscription/</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -77,7 +85,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?model[]=Subscription</link>
+     <link>https://mmofishing.games/directory/model/Buy-to-Play/</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -85,15 +93,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?model[]=Buy-to-Play</link>
-     <title>Directory | MMO Fishing Games</title>
-     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
-     <ror:updatePeriod></ror:updatePeriod>
-     <ror:sortOrder>1</ror:sortOrder>
-     <ror:resourceOf>sitemap</ror:resourceOf>
-</item>
-<item>
-     <link>https://mmofishing.games/directory/?fishing_style[]=Simulation</link>
+     <link>https://mmofishing.games/directory/fishing-style/Simulation/</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -197,7 +197,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?platform%5B0%5D=&amp;page=1</link>
+     <link>https://mmofishing.games/directory/platform/PC/?platform%5B0%5D=PC&amp;page=1</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -205,7 +205,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?platform%5B0%5D=PC&amp;page=1</link>
+     <link>https://mmofishing.games/directory/platform/Cross-platform/?platform%5B0%5D=Cross-platform&amp;page=1</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -213,7 +213,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?platform%5B0%5D=Cross-platform&amp;page=1</link>
+     <link>https://mmofishing.games/directory/model/Free-to-Play/?model%5B0%5D=Free-to-Play&amp;page=1</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -221,7 +221,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?model%5B0%5D=Free-to-Play&amp;page=1</link>
+     <link>https://mmofishing.games/directory/model/Subscription/?model%5B0%5D=Subscription&amp;page=1</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -229,7 +229,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?model%5B0%5D=Subscription&amp;page=1</link>
+     <link>https://mmofishing.games/directory/model/Buy-to-Play/?model%5B0%5D=Buy-to-Play&amp;page=1</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -237,15 +237,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://mmofishing.games/directory/?model%5B0%5D=Buy-to-Play&amp;page=1</link>
-     <title>Directory | MMO Fishing Games</title>
-     <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
-     <ror:updatePeriod></ror:updatePeriod>
-     <ror:sortOrder>2</ror:sortOrder>
-     <ror:resourceOf>sitemap</ror:resourceOf>
-</item>
-<item>
-     <link>https://mmofishing.games/directory/?fishing_style%5B0%5D=Simulation&amp;page=1</link>
+     <link>https://mmofishing.games/directory/fishing-style/Simulation/?fishing_style%5B0%5D=Simulation&amp;page=1</link>
      <title>Directory | MMO Fishing Games</title>
      <description>MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.</description>
      <ror:updatePeriod></ror:updatePeriod>

@@ -1,0 +1,28 @@
+RewriteEngine On
+RewriteBase /directory/
+
+RewriteCond %{QUERY_STRING} ^platform%5B0%5D=([^&]+)&page=([0-9]+)$
+RewriteRule ^directory/$ /directory/platform/%1/page/%2? [R=301,L]
+
+RewriteRule ^platform/([^/]+)/page/([0-9]+)/?$ index.php?platform[]=$1&page=$2 [L,QSA]
+
+# Rewrite SEO-friendly platform URLs
+RewriteRule ^platform/([^/]+)/?$ index.php?platform[]=$1 [L,QSA]
+
+# Optional: Redirect old URL to new SEO-friendly format (for canonical consistency)
+RewriteCond %{QUERY_STRING} ^platform\[\]=([^&]+)$
+RewriteRule ^$ /directory/platform/%1? [R=301,L]
+
+# Rewrite SEO-friendly model URLs
+RewriteRule ^model/([^/]+)/?$ index.php?model[]=$1 [L,QSA]
+
+# Optional: Redirect old query string URL to new clean URL
+RewriteCond %{QUERY_STRING} ^model\[\]=([^&]+)$
+RewriteRule ^$ /directory/model/%1? [R=301,L]
+
+# Rewrite SEO-friendly fishing style URLs
+RewriteRule ^fishing-style/([^/]+)/?$ index.php?fishing_style[]=$1 [L,QSA]
+
+# Optional: Redirect old query to new format
+RewriteCond %{QUERY_STRING} ^fishing_style\[\]=([^&]+)$
+RewriteRule ^$ /directory/fishing-style/%1? [R=301,L]

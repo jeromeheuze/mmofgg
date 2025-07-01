@@ -32,9 +32,9 @@ $nav_styles    = $DBcon->query("SELECT DISTINCT fishing_style FROM games ORDER B
                 <li class="menu-item-has-children">
                     <a href="#">Platforms</a>
                     <ul class="sub-menu">
-                        <?php while ($row = $nav_platforms->fetch_assoc()): ?>
+                        <?php while ($row = $nav_platforms->fetch_assoc()): // /directory/platform/PC ?>
                             <li>
-                                <a href="/directory/?platform[]=<?= urlencode($row['platform']) ?>">
+                                <a href="/directory/platform/<?= urlencode($row['platform']) ?>/">
                                     <?= htmlspecialchars($row['platform']) ?>
                                 </a>
                             </li>
@@ -47,7 +47,7 @@ $nav_styles    = $DBcon->query("SELECT DISTINCT fishing_style FROM games ORDER B
                     <ul class="sub-menu">
                         <?php while ($row = $nav_models->fetch_assoc()): ?>
                             <li>
-                                <a href="/directory/?model[]=<?= urlencode($row['model']) ?>">
+                                <a href="/directory/model/<?= urlencode($row['model']) ?>/">
                                     <?= htmlspecialchars($row['model']) ?>
                                 </a>
                             </li>
@@ -60,7 +60,7 @@ $nav_styles    = $DBcon->query("SELECT DISTINCT fishing_style FROM games ORDER B
                     <ul class="sub-menu">
                         <?php while ($row = $nav_styles->fetch_assoc()): ?>
                             <li>
-                                <a href="/directory/?fishing_style[]=<?= urlencode($row['fishing_style']) ?>">
+                                <a href="/directory/fishing-style/<?= urlencode($row['fishing_style']) ?>/">
                                     <?= htmlspecialchars($row['fishing_style']) ?>
                                 </a>
                             </li>
