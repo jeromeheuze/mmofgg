@@ -1,28 +1,41 @@
 RewriteEngine On
 RewriteBase /directory/
 
-RewriteCond %{QUERY_STRING} ^platform%5B0%5D=([^&]+)&page=([0-9]+)$
-RewriteRule ^directory/$ /directory/platform/%1/page/%2? [R=301,L]
+# 1. Redirect ugly URL with platform[0] and page to clean version
+RewriteCond %{QUERY_STRING} ^platform(?:%5B0%5D|\[\])=([^&]+)&page=([0-9]+)$
+RewriteRule ^$ platform/%1/page/%2? [R=301,L]
 
+# 2. Redirect ugly URL with only platform
+RewriteCond %{QUERY_STRING} ^platform(?:%5B0%5D|\[\])=([^&]+)$
+RewriteRule ^$ platform/%1? [R=301,L]
+
+# 3. Redirect ugly URL with only page (if you support standalone pagination)
+RewriteCond %{QUERY_STRING} ^page=([0-9]+)$
+RewriteRule ^$ page/%1? [R=301,L]
+
+# 4. Redirect model query format
+RewriteCond %{QUERY_STRING} ^model(?:%5B0%5D|\[\])=([^&]+)$
+RewriteRule ^$ model/%1? [R=301,L]
+
+# 5. Redirect fishing_style query format
+RewriteCond %{QUERY_STRING} ^fishing_style(?:%5B0%5D|\[\])=([^&]+)$
+RewriteRule ^$ fishing-style/%1? [R=301,L]
+
+# ---------------------------------------
+# SEO-friendly rewrite rules to index.php
+# ---------------------------------------
+
+# /platform/value/page/2/
 RewriteRule ^platform/([^/]+)/page/([0-9]+)/?$ index.php?platform[]=$1&page=$2 [L,QSA]
 
-# Rewrite SEO-friendly platform URLs
+# /platform/value/
 RewriteRule ^platform/([^/]+)/?$ index.php?platform[]=$1 [L,QSA]
 
-# Optional: Redirect old URL to new SEO-friendly format (for canonical consistency)
-RewriteCond %{QUERY_STRING} ^platform\[\]=([^&]+)$
-RewriteRule ^$ /directory/platform/%1? [R=301,L]
+# /page/2/
+RewriteRule ^page/([0-9]+)/?$ index.php?page=$1 [L,QSA]
 
-# Rewrite SEO-friendly model URLs
+# /model/value/
 RewriteRule ^model/([^/]+)/?$ index.php?model[]=$1 [L,QSA]
 
-# Optional: Redirect old query string URL to new clean URL
-RewriteCond %{QUERY_STRING} ^model\[\]=([^&]+)$
-RewriteRule ^$ /directory/model/%1? [R=301,L]
-
-# Rewrite SEO-friendly fishing style URLs
+# /fishing-style/value/
 RewriteRule ^fishing-style/([^/]+)/?$ index.php?fishing_style[]=$1 [L,QSA]
-
-# Optional: Redirect old query to new format
-RewriteCond %{QUERY_STRING} ^fishing_style\[\]=([^&]+)$
-RewriteRule ^$ /directory/fishing-style/%1? [R=301,L]

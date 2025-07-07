@@ -33,11 +33,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mmofishing.games/404.php</loc>
-  <lastmod>2025-07-01T17:36:39+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://mmofishing.games/directory/platform/PC/</loc>
   <lastmod>2025-07-01T17:36:39+00:00</lastmod>
   <priority>0.80</priority>
@@ -122,41 +117,4 @@
   <lastmod>2025-07-01T17:36:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://mmofishing.games/directory/?page=1</loc>
-  <lastmod>2025-07-01T17:36:39+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://mmofishing.games/directory/platform/PC/?platform%5B0%5D=PC&amp;page=1</loc>
-  <lastmod>2025-07-01T17:36:39+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://mmofishing.games/directory/platform/Cross-platform/?platform%5B0%5D=Cross-platform&amp;page=1</loc>
-  <lastmod>2025-07-01T17:36:39+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://mmofishing.games/directory/model/Free-to-Play/?model%5B0%5D=Free-to-Play&amp;page=1</loc>
-  <lastmod>2025-07-01T17:36:39+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://mmofishing.games/directory/model/Subscription/?model%5B0%5D=Subscription&amp;page=1</loc>
-  <lastmod>2025-07-01T17:36:39+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://mmofishing.games/directory/model/Buy-to-Play/?model%5B0%5D=Buy-to-Play&amp;page=1</loc>
-  <lastmod>2025-07-01T17:36:39+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://mmofishing.games/directory/fishing-style/Simulation/?fishing_style%5B0%5D=Simulation&amp;page=1</loc>
-  <lastmod>2025-07-01T17:36:39+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
 </urlset>

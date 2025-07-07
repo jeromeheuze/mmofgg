@@ -116,7 +116,7 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
         for ($p = 1; $p <= $totalPages; $p++) {
             $active = $p == ($_GET['page'] ?? 1) ? ' active' : '';
             $query = array_merge($_GET, ['page' => $p]);
-            echo "<li class='page-item{$active}'><a class='page-link' href='?".http_build_query($query)."'>{$p}</a></li>";
+            echo "<li class='page-item{$active}'><a class='page-link' href=/directory/'?".http_build_query($query)."'>{$p}</a></li>";
         }
         echo '</ul></nav>';
     }
@@ -155,10 +155,26 @@ $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
 $base = $protocol . $_SERVER['HTTP_HOST'] . '/directory/';
 
 // Parse all supported query parameters
+$page_name = "Directory";
+$sub_name = "Directory Listing";
 $platform      = isset($_GET['platform'][0]) ? urlencode($_GET['platform'][0]) : null;
 $model         = isset($_GET['model'][0]) ? urlencode($_GET['model'][0]) : null;
 $fishing_style = isset($_GET['fishing_style'][0]) ? urlencode($_GET['fishing_style'][0]) : null;
 $page          = isset($_GET['page']) ? (int)$_GET['page'] : null;
+
+//SEO page name and sub name
+if ($platform) {
+    $page_name .= ' - ' . ucfirst($platform);
+    $sub_name .= ' - Platform - ' . ucfirst($platform);
+}
+if ($model) {
+    $page_name .= ' - ' . ucfirst($model);
+    $sub_name .= ' - Business Model - ' . ucfirst($model);
+}
+if ($fishing_style) {
+    $page_name .= ' - ' . ucfirst($fishing_style);
+    $sub_name .= ' - Fishing Style - ' . ucfirst($fishing_style);
+}
 
 // Construct SEO-friendly path
 $seoPath = '';
@@ -184,7 +200,7 @@ $canonical = $base . $seoPath;
 <head>
     <?php include "./../includes/global_head.php" ?>
     <?php
-    $title = "Directory | MMO Fishing Games";
+    $title = $page_name." | MMO Fishing Games";
     $description = "MMO Fishing Games will be reviewing fishing skills and write guides for every game we can play.";
     $url = $canonical;
     ?>
@@ -212,7 +228,21 @@ $canonical = $base . $seoPath;
     <?php include "./../modules/navbar.php" ?>
 </div>
 <!-- header end -->
-
+<section class="page-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-inner">
+                    <h1 class="page-title"><?=$page_name?></h1>
+                    <ul class="page-list">
+                        <li><a href="/">Home</a></li>
+                        <li><?=$sub_name?></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="directory-section pt-5 pb-5">
     <div class="container">
         <div class="row">
